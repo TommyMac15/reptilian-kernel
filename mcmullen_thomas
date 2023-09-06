@@ -1,0 +1,21 @@
+drivers/usb/gadget/configfs.c:static struct device *android_device;
+drivers/usb/gadget/configfs.c:	if (android_device && !IS_ERR(android_device))
+drivers/usb/gadget/configfs.c:		return device_create(android_class, android_device,
+drivers/usb/gadget/configfs.c:		kobject_uevent_env(&android_device->kobj,
+drivers/usb/gadget/configfs.c:		kobject_uevent_env(&android_device->kobj,
+drivers/usb/gadget/configfs.c:		kobject_uevent_env(&android_device->kobj,
+drivers/usb/gadget/configfs.c:static int android_device_create(struct gadget_info *gi)
+drivers/usb/gadget/configfs.c:	android_device = device_create(android_class, NULL,
+drivers/usb/gadget/configfs.c:	if (IS_ERR(android_device))
+drivers/usb/gadget/configfs.c:		return PTR_ERR(android_device);
+drivers/usb/gadget/configfs.c:	dev_set_drvdata(android_device, gi);
+drivers/usb/gadget/configfs.c:		err = device_create_file(android_device, attr);
+drivers/usb/gadget/configfs.c:			device_destroy(android_device->class,
+drivers/usb/gadget/configfs.c:				       android_device->devt);
+drivers/usb/gadget/configfs.c:static void android_device_destroy(void)
+drivers/usb/gadget/configfs.c:		device_remove_file(android_device, attr);
+drivers/usb/gadget/configfs.c:	device_destroy(android_device->class, android_device->devt);
+drivers/usb/gadget/configfs.c:static inline int android_device_create(struct gadget_info *gi)
+drivers/usb/gadget/configfs.c:static inline void android_device_destroy(void)
+drivers/usb/gadget/configfs.c:	if (android_device_create(gi) < 0)
+drivers/usb/gadget/configfs.c:	android_device_destroy();

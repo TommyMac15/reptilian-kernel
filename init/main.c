@@ -1110,8 +1110,7 @@ static int __ref kernel_init(void *unused)
 	numa_default_policy();
 
 	pr_err("Thomas McMullen 1");
-	printk(KERN_ERR "Thomas McMullen 5")
-
+	printk(KERN_ERR "Thomas McMullen 5");
 
 	rcu_end_inkernel_boot();
 
@@ -1142,13 +1141,13 @@ static int __ref kernel_init(void *unused)
 	    !try_to_run_init_process("/bin/sh"))
 		return 0;
 	
-	pr_err("Thomas McMullen 2")
-	printk(KERN_ERR "Thomas McMullen 4")
+	pr_err("Thomas McMullen 2");
+	printk(KERN_ERR "Thomas McMullen 4");
 
 	panic("No working init found.  Try passing init= option to kernel. "
 	      "See Linux Documentation/admin-guide/init.rst for guidance.");
 }
-	pr_err("Thomas McMullen 3")
+	pr_err("Thomas McMullen 3");
 
 static noinline void __init kernel_init_freeable(void)
 {
